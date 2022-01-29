@@ -1,0 +1,144 @@
+{
+  "resources/scripts/main.ts": {
+    "file": "assets/main.cdf2fa91.js",
+    "src": "resources/scripts/main.ts",
+    "isEntry": true,
+    "imports": [
+      "_vendor.9e36e781.js"
+    ],
+    "dynamicImports": [
+      "resources/scripts/Pages/Dashboard.vue",
+      "resources/scripts/Pages/Welcome.vue",
+      "resources/scripts/Pages/Auth/ConfirmPassword.vue",
+      "resources/scripts/Pages/Auth/ForgotPassword.vue",
+      "resources/scripts/Pages/Auth/Login.vue",
+      "resources/scripts/Pages/Auth/Register.vue",
+      "resources/scripts/Pages/Auth/ResetPassword.vue",
+      "resources/scripts/Pages/Auth/VerifyEmail.vue"
+    ],
+    "css": [
+      "assets/main.28ec3125.css"
+    ]
+  },
+  "_vendor.9e36e781.js": {
+    "file": "assets/vendor.9e36e781.js"
+  },
+  "resources/scripts/Pages/Dashboard.vue": {
+    "file": "assets/Dashboard.eedf781f.js",
+    "src": "resources/scripts/Pages/Dashboard.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ApplicationLogo.bae6ea4f.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js"
+    ]
+  },
+  "_plugin-vue_export-helper.21dcd24c.js": {
+    "file": "assets/plugin-vue_export-helper.21dcd24c.js"
+  },
+  "_ApplicationLogo.bae6ea4f.js": {
+    "file": "assets/ApplicationLogo.bae6ea4f.js",
+    "imports": [
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_vendor.9e36e781.js"
+    ]
+  },
+  "resources/scripts/Pages/Welcome.vue": {
+    "file": "assets/Welcome.6d90365c.js",
+    "src": "resources/scripts/Pages/Welcome.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js"
+    ],
+    "css": [
+      "assets/Welcome.bd4e6121.css"
+    ]
+  },
+  "resources/scripts/Pages/Auth/ConfirmPassword.vue": {
+    "file": "assets/ConfirmPassword.669e456f.js",
+    "src": "resources/scripts/Pages/Auth/ConfirmPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_ValidationErrors.4511e9c8.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "_Guest.0ec9001e.js": {
+    "file": "assets/Guest.0ec9001e.js",
+    "imports": [
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_vendor.9e36e781.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "_ValidationErrors.4511e9c8.js": {
+    "file": "assets/ValidationErrors.4511e9c8.js",
+    "imports": [
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_vendor.9e36e781.js"
+    ]
+  },
+  "resources/scripts/Pages/Auth/ForgotPassword.vue": {
+    "file": "assets/ForgotPassword.cf3d0096.js",
+    "src": "resources/scripts/Pages/Auth/ForgotPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_ValidationErrors.4511e9c8.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "resources/scripts/Pages/Auth/Login.vue": {
+    "file": "assets/Login.54271efe.js",
+    "src": "resources/scripts/Pages/Auth/Login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ValidationErrors.4511e9c8.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "resources/scripts/Pages/Auth/Register.vue": {
+    "file": "assets/Register.6e1fd83e.js",
+    "src": "resources/scripts/Pages/Auth/Register.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_ValidationErrors.4511e9c8.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "resources/scripts/Pages/Auth/ResetPassword.vue": {
+    "file": "assets/ResetPassword.c23c3b75.js",
+    "src": "resources/scripts/Pages/Auth/ResetPassword.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_ValidationErrors.4511e9c8.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  },
+  "resources/scripts/Pages/Auth/VerifyEmail.vue": {
+    "file": "assets/VerifyEmail.a9f97285.js",
+    "src": "resources/scripts/Pages/Auth/VerifyEmail.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_Guest.0ec9001e.js",
+      "_vendor.9e36e781.js",
+      "_plugin-vue_export-helper.21dcd24c.js",
+      "_ApplicationLogo.bae6ea4f.js"
+    ]
+  }
+}
