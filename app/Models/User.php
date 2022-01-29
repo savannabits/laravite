@@ -41,4 +41,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $appends = ["image_url"];
+
+    public function getImageUrlAttribute(): string {
+        $name = trim(collect(explode(' ', $this->name))->map(function ($segment) {
+            return $segment[0] ?? '';
+        })->join(' '));
+        return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=7F9CF5&background=EBF4FF';
+    }
 }
