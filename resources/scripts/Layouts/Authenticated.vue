@@ -40,7 +40,8 @@
                                 <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
                                     <MenuItems class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                         <MenuItem v-for="item in userNavigation" :key="item.name" v-slot="{ active }">
-                                            <a :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</a>
+                                            <Link v-if="item.inertia" :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</Link>
+                                            <a v-else :href="item.href" :class="[active ? 'bg-gray-100' : '', 'block px-4 py-2 text-sm text-gray-700']">{{ item.name }}</a>
                                         </MenuItem>
                                     </MenuItems>
                                 </transition>
@@ -64,9 +65,9 @@
                 </div>
                 <div class="pt-4 pb-3 border-t border-gray-700">
                     <div class="flex items-center px-5">
-                        <div class="flex-shrink-0">
+                        <Link :href="route('welcome')" class="flex-shrink-0">
                             <img class="h-10 w-10 rounded-full" :src="user.image_url" alt="" />
-                        </div>
+                        </Link>
                         <div class="ml-3">
                             <div class="text-base font-medium leading-none text-white">{{ user.name }}</div>
                             <div class="text-sm font-medium leading-none text-gray-400">{{ user.email }}</div>
@@ -104,23 +105,8 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
 import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
 import route from "ziggy-js";
-import {computed} from "vue";
+import {computed, reactive} from "vue";
 import {Link, usePage} from "@inertiajs/inertia-vue3";
-
-const user = computed(() => usePage().props.value.auth.user)
-const navigation = [
-    { name: 'Dashboard', href: route('dashboard'), current: route().current('dashboard') },
-    { name: 'Team', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Calendar', href: '#', current: false },
-    { name: 'Reports', href: '#', current: false },
-]
-const userNavigation = [
-    { name: 'Your Profile', href: '#' },
-    { name: 'Settings', href: '#' },
-    { name: 'Sign out', href: route('logout') },
-]
-
 export default {
     components: {
         Disclosure,
@@ -136,6 +122,19 @@ export default {
         Link,
     },
     setup() {
+        const user = computed(() => usePage().props.value.auth.user)
+        const navigation = reactive([
+            { name: 'Dashboard', href: route('dashboard'), current: route().current('dashboard*') },
+            { name: 'My Account', href: route('profile.show'), current: route().current('profile.*') },
+            { name: 'Projects', href: '#', current: false },
+            { name: 'Calendar', href: '#', current: false },
+            { name: 'Reports', href: '#', current: false },
+        ])
+        const userNavigation = reactive([
+            { name: 'Your Profile', href: route('profile.show'), inertia: true },
+            { name: 'Settings', href: '#', inertia: false },
+            { name: 'Sign out', href: route('logout'), inertia:true },
+        ])
         return {
             user,
             navigation,
