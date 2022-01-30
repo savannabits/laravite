@@ -26,8 +26,17 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-Route::group(['prefix' => 'profile','middleware' => ['auth','verified'],'as' =>'profile.'],function () {
+})->middleware(['auth:sanctum', 'verified'])->name('dashboard');
+Route::group(['prefix' => 'profile','middleware' => ['auth:sanctum','verified'],'as' =>'profile.'],function () {
     Route::get('show',[\App\Http\Controllers\ProfileController::class,'show'])->name('show');
 });
+/* BACKEND */
+Route::group(['prefix' => config('app.backend.prefix','backend'),'middleware' => ['auth:sanctum','verified'],'as' =>'backend.'],function () {
+    Route::get('',function () {
+        return Inertia::render('Backend/Index');
+    })->name('index');
+    Route::get('customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customer.index');
+});
+
+/*AUTH*/
 require __DIR__.'/auth.php';

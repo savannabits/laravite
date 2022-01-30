@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efa0e7de28cba16d536e70750cdbd54a",
+    "content-hash": "939ccc123a43cc2093b57280274148de",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2972,6 +2972,71 @@
                 }
             ],
             "time": "2021-09-25T23:10:38+00:00"
+        },
+        {
+            "name": "savannabits/primevue-datatables",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/primevue-datatables.git",
+                "reference": "8199ae62be912bdfdc6bc8e5be2720f2abd0915f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/primevue-datatables/zipball/8199ae62be912bdfdc6bc8e5be2720f2abd0915f",
+                "reference": "8199ae62be912bdfdc6bc8e5be2720f2abd0915f",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.0",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Savannabits\\PrimevueDatatables\\PrimevueDatatablesServiceProvider"
+                    ],
+                    "aliases": {
+                        "PrimevueDatatables": "Savannabits\\PrimevueDatatables\\PrimevueDatatablesFacade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Savannabits\\PrimevueDatatables\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Maosa",
+                    "email": "maosa.sam@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy Laravel Server-Side implementation of PrimeVue Datatables",
+            "homepage": "https://github.com/savannabits/primevue-datatables",
+            "keywords": [
+                "datatables",
+                "laravel",
+                "primevue",
+                "primevue-datatables",
+                "savannabits",
+                "server-side"
+            ],
+            "support": {
+                "issues": "https://github.com/savannabits/primevue-datatables/issues",
+                "source": "https://github.com/savannabits/primevue-datatables/tree/v1.2.0"
+            },
+            "time": "2021-11-22T11:42:57+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -8084,7 +8149,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.3|^8.0"
+        "php": "^8.0|^8.1"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"

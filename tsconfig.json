@@ -18,7 +18,8 @@
         "paths": {
             "@/*": ["./resources/scripts/*"],
             "~/*": ["./resources/*"],
-        }
+        },
+        "allowSyntheticDefaultImports": true,
     },
     "include": ["resources/scripts/**/*"]  // Frontend paths pattern
 
