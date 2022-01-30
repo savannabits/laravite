@@ -12,9 +12,6 @@
             <SidebarLink :href="route('dashboard')" icon="pi pi-chart-bar" :active="route().current('dashboard')">
                 Frontend
             </SidebarLink>
-            <SidebarLink :href="route('backend.customer.index')" icon="pi pi-users" :active="route().current('backend.customer.index')">
-                Customers
-            </SidebarLink>
         </Sidebar>
 
         <!-- Content area -->

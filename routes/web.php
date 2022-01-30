@@ -35,7 +35,6 @@ Route::group(['prefix' => config('app.backend.prefix','backend'),'middleware' =>
     Route::get('',function () {
         return Inertia::render('Backend/Index');
     })->name('index');
-    Route::get('customers',[\App\Http\Controllers\CustomerController::class,'index'])->name('customer.index');
 });
 
 /*AUTH*/
