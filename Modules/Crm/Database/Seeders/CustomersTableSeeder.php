@@ -4,8 +4,9 @@ namespace Modules\Crm\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Modules\Crm\Entities\Customer;
 
-class CrmDatabaseSeeder extends Seeder
+class CustomersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,8 +15,6 @@ class CrmDatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Model::unguard();
-
-         $this->call(CustomersTableSeeder::class);
+        Customer::factory()->count(100)->create();
     }
 }

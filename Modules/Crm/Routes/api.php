@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/crm', function (Request $request) {
-    return $request->user();
-});
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('api/crm')
+    ->name('api.crm.')
+    ->middleware(['auth:sanctum'])
+    ->group(function() {
+        Route::get('/', 'CrmController@index')->name('index');
+        Route::apiResource('customers',"Api\CustomerController");
+    });

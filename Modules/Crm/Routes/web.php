@@ -11,6 +11,13 @@
 |
 */
 
-Route::prefix('crm')->group(function() {
-    Route::get('/', 'CrmController@index');
+
+use Illuminate\Support\Facades\Route;
+
+Route::prefix('crm')
+    ->name('crm.')
+    ->middleware(['auth:sanctum'])
+    ->group(function() {
+        Route::get('/', 'CrmController@index')->name('index');
+        Route::resource('customers',"CustomerController");
 });
