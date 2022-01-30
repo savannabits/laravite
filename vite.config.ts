@@ -2,7 +2,7 @@ import vue from '@vitejs/plugin-vue'
 import path from "path";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
-import tailwindConfig from "./tailwind.config.ts";
+import tailwindConfig from "./tailwind.config";
 export default ({ command }) => ({
     base: command === 'serve' ? '' : '/build/',
     publicDir: 'fake_dir_so_nothing_gets_copied',
@@ -28,7 +28,7 @@ export default ({ command }) => ({
     css: {
         postcss: {
             plugins: [
-                tailwindcss(tailwindConfig),
+                tailwindcss(tailwindConfig as any),
                 autoprefixer,
             ]
         },

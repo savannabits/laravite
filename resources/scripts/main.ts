@@ -1,7 +1,12 @@
 import "@/bootstrap";
-import "~/css/app.css"
+import PrimeVue from "primevue/config";
+import '~/css/app.css';
+import '~/css/style.scss';
+import "primevue/resources/themes/tailwind-light/theme.css";
+import "primevue/resources/primevue.min.css";
+import "primeicons/primeicons.css";
 import { createApp, h } from 'vue';
-import { createInertiaApp } from '@inertiajs/inertia-vue3';
+import {createInertiaApp, Link} from '@inertiajs/inertia-vue3';
 import { InertiaProgress } from '@inertiajs/progress';
 import route from "ziggy-js";
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
@@ -9,15 +14,18 @@ const appName = window.document.getElementsByTagName('title')[0]?.innerText || '
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: async name => {
+        // @ts-ignore
         const pages = import.meta.glob('./Pages/**/*.vue');
         return (await pages[`./Pages/${name}.vue`]()).default;
     },
     setup({ el, app, props, plugin }) {
         return createApp({ render: () => h(app, props) })
             .use(plugin)
+            .use(PrimeVue)
+            .component('router-link', Link)
             .mixin({ methods: { route } })
             .mount(el);
     },
 } as any);
 
-InertiaProgress.init({ color: '#4B5563' });
+InertiaProgress.init({ color: 'rgb(34, 197, 94)' });
