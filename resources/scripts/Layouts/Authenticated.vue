@@ -126,7 +126,7 @@ export default {
         const navigation = reactive([
             { name: 'Dashboard', href: route('dashboard'), current: route().current('dashboard*') },
             { name: 'My Account', href: route('profile.show'), current: route().current('profile.*') },
-            { name: 'Projects', href: '#', current: false },
+            { name: 'Backend', href: route('backend.index'), current: false },
             { name: 'Calendar', href: '#', current: false },
             { name: 'Reports', href: '#', current: false },
         ])
