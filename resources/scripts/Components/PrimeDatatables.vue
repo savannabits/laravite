@@ -1,5 +1,6 @@
 <template>
     <DataTable
+        class="p-datatable-sm"
         :value="records"
         :lazy="true"
         :auto-layout="true"
@@ -15,6 +16,7 @@
         @filter="onFilter"
         filter-display="row"
         responsive-layout="stack"
+        breakpoint="960px"
         :state-key="stateKey"
         state-storage="session"
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} records"

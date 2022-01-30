@@ -12,7 +12,7 @@
             <SidebarLink :href="route('dashboard')" icon="pi pi-chart-bar" :active="route().current('dashboard')">
                 Frontend
             </SidebarLink>
-            <SidebarLink :href="route('backend.customer.index')" icon="pi pi-users" :active="route().current('backend.customer.index')">
+            <SidebarLink :href="route('crm.customers.index')" icon="pi pi-users" :active="route().current('crm.customers.*')">
                 Customers
             </SidebarLink>
         </Sidebar>
@@ -23,6 +23,8 @@
             <!-- Site header -->
             <Header :sidebarOpen="sidebarOpen" @toggle-sidebar="sidebarOpen = !sidebarOpen"/>
             <main class="py-1">
+                <Toast/>
+                <ConfirmDialog/>
                 <template v-if="$slots.header">
                     <slot name="header"/>
                 </template>
@@ -44,6 +46,8 @@ import FilterButton from '@/components/DropdownFilter.vue'
 import Datepicker from '@/components/Datepicker.vue'
 import SidebarLink from "@/partials/SidebarLink.vue";
 import {usePage} from "@inertiajs/inertia-vue3";
+import Toast from "primevue/toast";
+import ConfirmDialog from "primevue/confirmdialog";
 
 export default defineComponent({
     name: 'Backend',
@@ -55,6 +59,8 @@ export default defineComponent({
         DashboardAvatars,
         FilterButton,
         Datepicker,
+        Toast,
+        ConfirmDialog,
     },
     setup() {
 
